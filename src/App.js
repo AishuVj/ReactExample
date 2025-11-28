@@ -1,6 +1,8 @@
 
 import React from 'react';
-import ProfileCard from './Profilecard';
+import VariableDisplay from './VariableDisplay';
+import ProfileCard from './ProfileCard';
+import JobBoard from './JobBoard';
 import "./styles.css";   // optional if you create a CSS file
 
 const App = () => {
@@ -44,9 +46,13 @@ const App = () => {
           />
         ))}
       </div>
+      <VariableDisplay />
+      <JobBoard/>
     </div>
   );
+  
 };
 
 export default App;
+
 
