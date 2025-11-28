@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import ProfileCard from './Profilecard';
+import "./styles.css";   // optional if you create a CSS file
+
+const App = () => {
+  const profiles = [
+    {
+      image: "https://via.placeholder.com/150",
+      name: "John Doe",
+      jobTitle: "Frontend Developer",
+      bio: "Passionate about creating user-friendly web applications.",
+      skills: ["React", "CSS", "JavaScript"]
+    },
+    {
+      image: "https://via.placeholder.com/150",
+      name: "Sara Lee",
+      jobTitle: "UI/UX Designer",
+      bio: "Designs with empathy and a focus on user experience.",
+      skills: ["Figma", "Adobe XD", "Wireframing"]
+    },
+    {
+      image: "https://via.placeholder.com/150",
+      name: "David Kim",
+      jobTitle: "Backend Developer",
+      bio: "Loves building robust server-side systems.",
+      skills: ["Node.js", "MongoDB", "Express"]
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Team Profiles</h1>
+
+      <div className="profile-list">
+        {profiles.map((profile, index) => (
+          <ProfileCard 
+            key={index}
+            image={profile.image}
+            name={profile.name}
+            jobTitle={profile.jobTitle}
+            bio={profile.bio}
+            skills={profile.skills}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
+
